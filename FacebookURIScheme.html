@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>識別(iOS/Android)</title>
+</head>
+<body onLoad="App()"> 
+<script>
+ 
+    function App() {
+        if (
+          navigator.userAgent.indexOf('iPhone') > 0
+          || navigator.userAgent.indexOf('iPad') > 0
+          || navigator.userAgent.indexOf('iPod') > 0
+        )
+        {
+           document.location = "fb://profile/YOUR_FACEBOOK_ID";
+           var time = (new Date()).getTime();
+           setTimeout(function(){
+               var now = (new Date()).getTime();
+ 
+               if((now-time)<400) {
+                       document.location = "https://itunes.apple.com/jp/app/facebook/id284882215?mt=8&uo=4";
+               }
+           }, 300);
+        }
+        else if(navigator.userAgent.indexOf('Android') > 0)
+        {
+                        document.location = "intent://profile/YOUR_FACEBOOK_ID#Intent;scheme=fb;package=com.facebook.katana;end";
+        }
+ 
+    };
+ 
+</script>
+</body>
+</html>
